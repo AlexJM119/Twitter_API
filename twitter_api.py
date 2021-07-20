@@ -20,3 +20,11 @@ access_token = auth_response_data['access_token']
 headers = {
     'Authorization' : 'Bearer {token}'.format(token=access_token)
 }
+
+BASE_URL = 'https://api.twitter.com/2/tweets/'
+
+tweet_id = '1417431102390603776'
+
+r = requests.get(BASE_URL + tweet_id, headers=headers)
+r = r.json()
+print(r)

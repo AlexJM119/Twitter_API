@@ -1,5 +1,4 @@
-import requests
-import pytwitter
+import requests 
 
 CLIENT_ID = 'aRaHc4eMk3inYP4phEv2Razi9'
 CLIENT_SECRET = 'Vw0V8fBoTDSWmkKPpzCjgN0RymA4a50kwR3Jnj9nxRPE01gO2T'
@@ -27,4 +26,5 @@ tweet_id = '1417431102390603776'
 
 r = requests.get(BASE_URL + tweet_id, headers=headers)
 r = r.json()
-print(r)
+print(f"\nTweet Specs\nid : {r['data']['id']}\ntext: {r['data']['text']}")
+

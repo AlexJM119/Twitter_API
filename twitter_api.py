@@ -6,7 +6,7 @@ CLIENT_SECRET = 'Vw0V8fBoTDSWmkKPpzCjgN0RymA4a50kwR3Jnj9nxRPE01gO2T'
 URL = 'https://api.twitter.com/oauth2/token'
 auth_response = requests.post(URL, {
     'grant_type': 'client_credentials',
-    'client_id': CLIENT_ID, 
+    'client_id': CLIENT_ID,
     'client_secret': CLIENT_SECRET
 })
 print(auth_response.status_code)

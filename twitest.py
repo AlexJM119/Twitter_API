@@ -1,5 +1,4 @@
 import unittest
-import requests
 from twitter_api import get_text, get_response, to_json, make_request
 
 CLIENT_ID = 'aRaHc4eMk3inYP4phEv2Razi9'

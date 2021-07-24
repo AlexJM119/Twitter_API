@@ -14,12 +14,14 @@ database_name = 'TweBase'
 
 class Twitest(unittest.TestCase):
 
+  
     def test_get_text(self):
-        response = get_response(url=URL, c_id=CLIENT_ID, c_secret=CLIENT_SECRET)
+        response = get_response(URL, CLIENT_ID, CLIENT_SECRET)
         resp = to_json(response)
         req = make_request(BASE_URL, tweet_id, resp)
         r = to_json(req)
         self.assertNotEqual(get_text(r), "")
 
+        
 if __name__ == '__main__':
     unittest.main()

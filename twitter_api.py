@@ -14,15 +14,20 @@ tweet_id = '1418562793586966528'
 
 database_name = 'TweBase'
 
+
 def get_response(url, c_id, c_secret):
-    return requests.post(url, {'grant_type': 'client_credentials', 'client_id': c_id, 'client_secret': c_secret})
+    return requests.post(url, {
+        'grant_type': 'client_credentials',
+        'client_id': c_id,
+        'client_secret': c_secret
+    })
 
 def get_status_code(response):
     return response.status_code
 
 def to_json(response):
     return response.json()
-  
+
 def make_request(base, tweet, json_input):
     head = {'Authorization': 'Bearer {token}'.format(token=json_input['access_token'])}
     return requests.get(base + tweet, headers=head)

@@ -22,26 +22,36 @@ def get_response(url, c_id, c_secret):
         'client_secret': c_secret
     })
 
+
 def get_status_code(response):
     return response.status_code
+
 
 def to_json(response):
     return response.json()
 
+
 def make_request(base, tweet, json_input):
-    head = {'Authorization': 'Bearer {token}'.format(token=json_input['access_token'])}
+    head = {
+        'Authorization':
+        'Bearer {token}'.format(token=json_input['access_token'])
+    }
     return requests.get(base + tweet, headers=head)
+
 
 def create_dataframe(request_input):
     df = pd.DataFrame.from_dict(request_input)
     return df
 
+
 def start_engine(db, db_name):
     engine = create_engine(f'mysql://root:codio@localhost/{db_name}')
     db.to_sql('tweet_data', con=engine, if_exists='replace', index=False)
 
+
 def get_text(req_json):
     return req_json['data']['text']
+
 
 response = get_response(url=URL, c_id=CLIENT_ID, c_secret=CLIENT_SECRET)
 print(get_status_code(response))

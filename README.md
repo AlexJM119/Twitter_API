@@ -2,4 +2,4 @@
 
 In progress:
 
-  Checkstyle
+    Checkstyle
